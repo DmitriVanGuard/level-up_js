@@ -1,0 +1,12 @@
+{
+	"castle": {
+		"id": 0,
+		"description": "",
+		"boss": true
+	},
+	"tavern": {
+		"id": 1,
+		"description": "Пиво сегодня в два раза дешевле!",
+		"boss": false
+	}
+}
