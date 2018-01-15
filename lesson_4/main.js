@@ -1,68 +1,34 @@
-// Пример 1
+/*let age = 16,
+    height = 170,
+    grade = 10;*/
 
-// let age = 16, height = 170, grade = 10;
+let [age, , grade] = [16, 170, 10];
 
-// let [age, height, grade] = [16, 170, 10];
+// console.log(age);
+// console.log(grade);
+// console.log(height);
 
-/*
-	console.log(age);
-	console.log(heihgt);
-	console.log(grade);
-*/
+let a = 13;
+let b = 69;
+[a, b] = [b, a];
 
-/* ---------------------------------------------------------------- */
+// console.log(a, b);
 
-// Пример 2
-/*
-let x = 6, y = 10;
 
-[x, y] = [y, x];
-	console.log(x);
-	console.log(y);
-*/
+const destructObj = { name: "Player1", x: 50, y: 44 };
 
-/* ---------------------------------------------------------------- */
+const { name, x, y, z } = { name: "Player1", x: 50, y: 44 };
 
-// Пример 3
+console.log(name, x, y, z);
 
-// let [age, height, grade, ...rest] = [16, 170, 10, 'player', 'castle', 55];
-
+let [age, height, ...rest] = [16, 170, 'asdf', 'zzz', '123', 123];
+// console.log(age);
+// console.log(height);
 // console.log(rest);
 
-/* ---------------------------------------------------------------- */
-
-// Пример 4
-
-const numbers = [1, 5, 90, 233];
-const letters = ['a', 'b', 'c', 'd'];
+const numbers = [1, 2, 3, 99];
+const letters = ['a', 'b', 'c', 'z'];
 
 const concat = [...numbers, ...letters];
-// console.log(concat);
 
-/* ---------------------------------------------------------------- */
-
-// Пример 5
-
-let [name, lastname, age = 50] = ['John', 'Cena'];
-// console.log(name, lastname, age);
-
-/* ---------------------------------------------------------------- */
-
-// Пример 6
-
-let { name: nickname, x: playerX, y: playerY } = { name: 'Player1', x: 50, y: 44 };
-// console.log(nickname, playerX, playerY);
-
-/* ---------------------------------------------------------------- */
-
-// Пример 7
-
-const element = {
-	x: 13,
-	y: 37
-};
-
-let { x, y, z } = element;
-console.log(x);
-console.log(y);
-console.log(z);
+console.log(concat);

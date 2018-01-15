@@ -1,97 +1,51 @@
-// Пример 1
-/*  --- for...of --- */
+/* ----- for...of ----- */
+const array = ['a', 'b', 'c', 'd'];
 
-/*
-	const array = ['a', 123, 'b', 555, 'c'];
+for( let element of array ){
+  // console.log(element);
+}
 
-	for (let element of array) {
-		console.log(element);
-	}
-*/
+/* ----- some() ----- */
+const instruments = ['гитара', 'флейта', 'гитара', 'тромбон', 'укулеле'];
 
-/* ---------------------------------------------------------------- */
+instruments.some( instrument => {
+  if( instrument === 'гитара' ){
+    // console.log('Гитара найдена');
+    // return true;
+  }
+} );
 
-// Пример 2
-/*  --- Object.keys() --- */
+/*for(let i = 0; i < instruments.length; i++){
+  if( instruments[i] === 'гитара' ){
+    console.log('Гитара найдена');
+    break;
+  }
+}*/
 
-/*
-	const Player = {
-		nickname: 'Арнольд',
-		health: 69,
-		armor: 37,
-		inventory: ['Фонарь', 'Нож', 'Веревка', 'Мыло']
-	};
+const result = numbers.some( number => number > 10 );
+console.log(result);
 
-	console.log(Object.keys(Player));
 
-	const playerProps = Object.keys(Player);
-	for (let prop of playerProps) {
-		let value = Player[prop];
-		console.log(`Свойство: ${prop} | значение: ${value}`);
-	}
+/* ----- map() ----- */
+const numbers = [8, 0, 99, 123, 7];
+const newNumbers = numbers.map( number => number + 5 );
 
-	Object.keys(Player).forEach(key => console.log(`Свойство: ${key} | значение: ${Player[key]}`))
+// console.log(numbers);
+// console.log(newNumbers);
 
-	Object.keys(Player).forEach(key => {
-		let value = Player[key];
-		console.log(`Свойство: ${key} | значение: ${value}`);
-	});
-*/
+/* ----- filter() ----- */
+const filteredNumbers = numbers.filter( number => number < 10 );
+// console.log(filteredNumbers);
 
-/* ---------------------------------------------------------------- */
 
-// Пример 3
-/*  --- some() --- */
-/*
-	const instruments = ['гитара', 'флейта', 'гитара', 'тромбон', 'укулеле'];
+/* ----- reduce() ----- */
 
-	instruments.some(instrument => {
-		if (instrument === 'гитара') {
-			console.log('Гитара найдена!');
-			return true;
-			// return true; Показать что будет если не возвращать true
-		}
-	});
-*/
+const total = numbers.reduce( (prevValue, currentElem) => {
 
-// Пример 3.2
-/*
-	const numbers = [8, 0, 99, 123, 7];
+  const table = { prevValue, currentElem, 'sum': prevValue + currentElem };
+  console.table(table);
 
-	const result = numbers.some(number => number > 10);
-	console.log(result);
-*/
-
-/* ---------------------------------------------------------------- */
-
-// Пример 4
-/*  --- map() --- */
-const numbers = [4, 9, 0, 100, 65, 2];
-
-/*const newNumbers = numbers.map(number => number + 5);
-console.log(numbers);
-console.log(newNumbers);*/
-
-/* ---------------------------------------------------------------- */
-
-// Пример 6
-/*  --- filter() --- */
-
-const littleNumbers = numbers.filter(number => number < 10);
-// console.log(littleNumbers);
-
-/* ---------------------------------------------------------------- */
-
-// Пример 7
-/*  --- reduce() --- */
-
-const total = numbers.reduce((prevValue, nextValue) => {
-	// console.log(`prevValue = ${prevValue} | nextValue = ${nextValue}`);
-	// console.log(`prevValue	+	nextValue	= next prevValue`);
-	// console.log(`${prevValue}			+	${nextValue}			= ${prevValue + nextValue}`);
-	const table = { prevValue, nextValue, "next prevValue": prevValue+nextValue};
-	console.table(table)
-	return prevValue + nextValue;
-}, 100);
+  return prevValue + currentElem;
+}, 100 );
 
 console.log(total);
